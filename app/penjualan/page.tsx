@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ambilSemua, supabase } from "@/lib/supabase";
 import { angka, bacaBulat, bacaDesimal, bulanIni, hariIni, namaBulan, rentangBulan, rupiah, tanggalPendek } from "@/lib/format";
 import type { Penjualan } from "@/lib/hitung";
-import { Judul, Kartu, Kolom, Memuat, Pesan, Statistik, Tombol, inputCls } from "@/components/ui";
+import { Judul, Kartu, Kolom, Memuat, Pesan, Statistik, Tombol, inputCls, inputBulanCls } from "@/components/ui";
 
 export default function HalamanPenjualan() {
   const [bulan, setBulan] = useState(bulanIni());
@@ -87,7 +87,7 @@ export default function HalamanPenjualan() {
 
       <div className="mb-3 mt-6 flex items-center justify-between">
         <h2 className="font-semibold">Riwayat {namaBulan(bulan)}</h2>
-        <input type="month" className={`${inputCls} w-auto py-1.5 text-sm`} value={bulan} max={bulanIni()} onChange={(e) => e.target.value && setBulan(e.target.value)} />
+        <input type="month" className={inputBulanCls} value={bulan} max={bulanIni()} onChange={(e) => e.target.value && setBulan(e.target.value)} />
       </div>
 
       {!daftar ? (

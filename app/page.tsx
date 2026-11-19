@@ -27,7 +27,7 @@ import {
   type Pengurangan,
   type Ringkasan,
 } from "@/lib/hitung";
-import { Judul, Kartu, Memuat, Pesan, Statistik, inputCls } from "@/components/ui";
+import { Judul, Kartu, Memuat, Pesan, Statistik, inputCls, inputBulanCls } from "@/components/ui";
 
 type Data = {
   r: Ringkasan;
@@ -127,7 +127,7 @@ export default function HalamanRingkasan() {
         kanan={
           <input
             type="month"
-            className={`${inputCls} w-auto py-1.5 text-sm`}
+            className={inputBulanCls}
             value={bulan}
             max={bulanIni()}
             onChange={(e) => e.target.value && setBulan(e.target.value)}

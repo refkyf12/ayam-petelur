@@ -9,7 +9,7 @@
   --color-kuning-50: #fdf8ec;
   --color-kuning-100: #faefd2;
   --color-kuning-500: #d99a1e;
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 html,

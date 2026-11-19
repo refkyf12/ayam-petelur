@@ -79,6 +79,12 @@ create index if not exists catatan_tanggal_idx on catatan_harian (user_id, tangg
 create index if not exists biaya_tanggal_idx on biaya (user_id, tanggal);
 create index if not exists penjualan_tanggal_idx on penjualan (user_id, tanggal);
 
+-- Izin akses tabel untuk pengguna yang sudah login.
+grant usage on schema public to authenticated;
+grant select, insert, update, delete
+  on kandang, catatan_harian, biaya, penjualan, pengaturan
+  to authenticated;
+
 -- Keamanan: setiap pengguna hanya bisa melihat & mengubah datanya sendiri.
 alter table kandang enable row level security;
 alter table catatan_harian enable row level security;
